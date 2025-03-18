@@ -3,3 +3,88 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: #333333;
+}
+
+header{
+    display: flex;
+    background-color: #ba0000;
+    height: 8vh;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    padding: 5px;
+}
+
+.logo h1{
+    font-family: "Jomolhari", serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.pesquisa{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 8px;
+}
+
+#barraPesquisa{
+    font-family: "Jomolhari", serif;
+    font-weight: 200;
+    padding: 5px;
+    height: 20px;
+    width: 70vh;
+    border: none;
+    border-radius: 5px;
+    background-color: #d9d9d9;
+}
+
+#botaoPesquisa{
+    font-family: "Jomolhari", serif;
+    font-weight: 200;
+    font-size: 10px;
+    width: 60px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d9d9d9;
+}
+
+.pesquisa button:hover{
+    color: #ba0000;
+}
+
+#fundo{
+    width: 100vw;
+    z-index: 0;
+}
+
+#imgPrincipal{
+    display: flex;
+    position: absolute;
+    top: 8vh;
+    left: -1vh;
+    z-index: 1;
+    width: 145vh;
+}
+
+.texto-inicio{
+    display: flex;
+    position: absolute;
+    top: 40vh;
+    left: 135vh;
+    text-align: center;
+    font-family: "Chango", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    width: 40px;
+    color: white;
+}
+
