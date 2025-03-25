@@ -1,90 +1,198 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #333333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-header{
+header {
     display: flex;
     background-color: #ba0000;
     height: 8vh;
     justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+    position: relative;
+    z-index: 10;
 }
 
-.logo{
-    display: flex;
-    padding: 5px;
-}
-
-.logo h1{
-    font-family: "Jomolhari", serif;
-    font-size: 3vh;
-    font-weight: 200;
-    color: white;
+.logo {
     display: flex;
     align-items: center;
-}
-
-.pesquisa{
-    display: flex;
-    align-items: center;
-    padding: 3vh;
     gap: 1vh;
 }
 
-#barraPesquisa{
+.logo img {
+    height: 7vh;
+}
+
+.logo h1 {
     font-family: "Jomolhari", serif;
+    font-size: 4vh;
     font-weight: 200;
-    padding: 1.5vh;
-    height: 2vh;
-    width: 70vh;
-    border: none;
-    border-radius: 1vh;
-    background-color: #d9d9d9;
-}
-
-#botaoPesquisa{
-    font-family: "Jomolhari", serif;
-    font-weight: 200;
-    font-size: 1.5vh;
-    width: 8vh;
-    border: none;
-    border-radius: 1vh;
-    background-color: #d9d9d9;
-}
-
-.pesquisa button:hover{
-    color: #ba0000;
-}
-
-#fundo{
-    width: 100vw;
-    z-index: 0;
-}
-
-#imgPrincipal{
-    display: flex;
-    position: absolute;
-    top: 8vh;
-    left: -1vh;
-    z-index: 1;
-    width: 133vh;
-}
-
-.texto-inicio{
-    display: flex;
-    position: absolute;
-    top: 40vh;
-    left: 130vh;
-    text-align: center;
-    font-family: "Chango", sans-serif;
-    font-weight: 400;
-    font-size: 6vh;
-    width: 4vh;
     color: white;
 }
 
+.pesquisa {
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+}
+
+#barraPesquisa {
+    font-family: "Jomolhari", serif;
+    font-weight: 200;
+    padding: 1.5vh;
+    height: 4vh;
+    width: 40vw;
+    max-width: 500px;
+    border: none;
+    border-radius: 1vh;
+    background-color: #d9d9d9;
+    font-size: 1.8vh;
+}
+
+#botaoPesquisa {
+    font-family: "Jomolhari", serif;
+    font-weight: 200;
+    font-size: 1.8vh;
+    padding: 0 1vh;
+    height: 4vh;
+    border: none;
+    border-radius: 1vh;
+    background-color: #d9d9d9;
+    cursor: pointer;
+    transition: all 0.3s; 
+}
+
+/* Transição mudar de cor o botão */
+#botaoPesquisa:hover {
+    background-color: black;
+    color: white;
+}
+
+main {
+    flex: 1;
+    position: relative;
+}
+
+.imagens-inicio {
+    position: relative;
+    width: 110%;
+    height: calc(92vh - 20px);
+    overflow: hidden;
+}
+
+#fundo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#imgPrincipal {
+    position: absolute;
+    left: 0vh;
+    max-width: 200%;
+    max-height: 110%;
+    z-index: 1;
+}
+
+.texto-inicio {
+    position: absolute;
+    top: 25vh;
+    right: 35vh;
+    text-align: center;
+    font-family: "Chango", sans-serif;
+    font-weight: 400;
+    font-size: 7vh;
+    color: white;
+    z-index: 2;
+    width: 40vh;
+}
+
+/* Estilos para a galeria de heróis */
+#galeria {
+    position: absolute;
+    top: 2vh;
+    left: 3vh;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 9fr)); /* Identifica as colunas e o tamanho delas  */
+    gap: 4vh;
+    padding: 2vh;
+    max-width: 1200px;
+}
+
+.character-card {
+    width: 25vh;
+    height: 40vh;
+    background-color: #d9d9d9;
+    border-radius: 1vh;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito de transição dos cards, quado passa o mouse em cima*/
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* borda sombreada */
+}
+
+.character-card img {
+    width: 100%;
+    height: 25vh;
+    object-fit: cover; /* Redimensionar a imagem para completar o espaço sem alterar seu tamanho pré definido*/
+    border-bottom: 2px solid #ba0000;
+}
+
+/* Nome do personagem*/
+.character-card h2 {
+    font-family: "Mako", sans-serif;
+    font-size: 2.3vh;
+    font-weight: 500;
+    padding: 3px 10px;
+    color: black;
+    text-align: left;
+}
+
+/* ID do personagem*/
+.character-card p {
+    font-family: "Mako", sans-serif;
+    font-size: 2vh;
+    padding: 1px 10px;
+    color: black;
+    text-align: left;
+}
+
+.character-card h3 {
+    font-family: "Mako", sans-serif;
+    font-weight: 400;
+    font-size: 2vh;
+    padding: 7px 8px;
+    color: black;
+    text-align: left;
+}
+
+
+/* Mensagens de ERRO*/ 
+.mensagem-erro {
+    grid-column: 1 / -1;
+    color: white;
+    font-family: "Mako", sans-serif;
+    font-size: 3vh;
+    text-align: left;
+    padding: 20px;
+}
+
+.mensagem-carregamento {
+    grid-column: 1 / -1;
+    color: white;
+    font-family: "Mako", sans-serif;
+    font-size: 3vh;
+    text-align: left;
+    padding: 20px;
+}
