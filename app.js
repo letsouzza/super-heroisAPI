@@ -4,6 +4,7 @@
 const botaoPesquisa = document.getElementById('botaoPesquisa')
 const barraPesquisa = document.getElementById('barraPesquisa')
 const galeria = document.getElementById('galeria')
+const detalhes = document.getElementById('detalhesPersonagem')
 const imgPrincipal = document.getElementById('imgPrincipal')
 const textoInicial = document.getElementById('textoInicial')
 const fundo = document.getElementById('fundo')
@@ -42,12 +43,12 @@ async function buscarHeroi(termo) {
 function criarCard(heroi) {
     const card = document.createElement('div') // Cria o card
     card.className = 'character-card'
+    card.addEventListener('click', () => detalhesPersonagem(heroi))
     
     // Pegar e colocar a imagem da API
     const img = document.createElement('img')
     img.src = heroi.image?.url || './img/placeholder.jpg'
     img.alt = heroi.name
-    img.loading = 'lazy'
     
     // Acrescentar o apelido do personagem
     const nome = document.createElement('h2')
@@ -64,6 +65,126 @@ function criarCard(heroi) {
     // Colocar tudo no Card
     card.append(img, nome, id, nomeCompleto)
     return card
+}
+
+async function detalhesPersonagem(heroi) {
+    galeria.replaceChildren() // Apaga toda a tela anterior 
+    const cardDetalhes = document.createElement('div') // Cria o card
+    cardDetalhes.className = 'character-details'
+
+    // Pegar e colocar a imagem da API
+    const imgDetalhes = document.createElement('img')
+    imgDetalhes.src = heroi.image?.url || './img/placeholder.jpg'
+    imgDetalhes.alt = heroi.name
+
+    const nomeDetalhes = document.createElement('h2')
+    nomeDetalhes.textContent = heroi.name
+
+    const idDetalhes = document.createElement('p')
+    idDetalhes.textContent = `ID: ${heroi.id}`
+
+
+    // Acrescentar Biografia do personagem 
+    const divBiografia = document.createElement('div')
+    divBiografia.className = 'character-biography'
+
+    const nomeCompletoDetalhes = document.createElement('p')
+    nomeCompletoDetalhes.textContent = `Nome: ${heroi.biography["full-name"]}`
+    divBiografia.appendChild(nomeCompletoDetalhes)
+
+    const aparicao = document.createElement('p')
+    aparicao.textContent = `Primeira Aparição: ${heroi.biography["first-appearance"]}`
+    divBiografia.appendChild(aparicao)
+
+    const publicador = document.createElement('p')
+    publicador.textContent = `Editor: ${heroi.biography["publisher"]}`
+    divBiografia.appendChild(publicador)
+
+    const alinhamento = document.createElement('p')
+    alinhamento.textContent = `Alinhamento: ${heroi.biography["alignment"]}`
+    divBiografia.appendChild(alinhamento)
+
+
+    // Acrescentar Aparência do personagem 
+    const divAparencia = document.createElement('div')
+    divAparencia.className = 'character-appearence'
+
+    const tituloAparencia = document.createElement('h1')
+    tituloAparencia.textContent = 'Aparência'
+
+    const listaAparencia = document.createElement('ul')
+
+    const genero = document.createElement('li')
+    genero.textContent = `Gênero: ${heroi.appearance["gender"]}`
+    listaAparencia.appendChild(genero)
+
+    const peso = document.createElement('li')
+    peso.textContent = `Peso: ${heroi.appearance["weight"]}`
+    listaAparencia.appendChild(peso)
+
+    const altura = document.createElement('li')
+    altura.textContent = `Altura: ${heroi.appearance["height"]}`    
+    listaAparencia.appendChild(altura)
+
+    const corCabelo = document.createElement('li')
+    corCabelo.textContent = `Cor do Cabelo: ${heroi.appearance["hair-color"]}`
+    listaAparencia.appendChild(corCabelo)
+
+    const corOlhos = document.createElement('li')
+    corOlhos.textContent = `Cor dos Olhos: ${heroi.appearance["eye-color"]}`
+    listaAparencia.appendChild(corOlhos)
+
+    divAparencia.appendChild(tituloAparencia)
+    divAparencia.appendChild(listaAparencia)
+
+
+    // Acrescentar o Poder do personagem 
+    const divPoderes = document.getElementById("poderes")
+    divPoderes.className = "character-power"
+
+    const tituloPoderes = document.createElement('h1')
+    tituloPoderes.textContent = 'Poder'
+    divPoderes.appendChild(tituloPoderes)
+    
+    const icons = document.createElement('img')
+    icons.src = ('./img/icons.png')
+    divPoderes.appendChild(icons)
+
+    const inteligencia = document.createElement("p")
+    inteligencia.textContent = `Inteligência: ${heroi.powerstats["intelligence"]}`
+    divPoderes.appendChild(inteligencia)
+
+    const forca = document.createElement("p")
+    forca.textContent = `Força: ${heroi.powerstats["strength"]}`
+    divPoderes.appendChild(forca)
+
+    const velocidade = document.createElement("p")
+    velocidade.textContent = `Velocidade: ${heroi.powerstats["speed"]}`
+    divPoderes.appendChild(velocidade)
+
+    const durabilidade = document.createElement("p")
+    durabilidade.textContent = `Durabilidade: ${heroi.powerstats["durability"]}`
+    divPoderes.appendChild(durabilidade)
+
+    const poder = document.createElement("p")
+    poder.textContent = `Poder: ${heroi.powerstats["power"]}`
+    divPoderes.appendChild(poder)
+
+    const combate = document.createElement("p")
+    combate.textContent = `Combate: ${heroi.powerstats["combat"]}`
+    divPoderes.appendChild(combate)
+
+
+    cardDetalhes.appendChild(imgDetalhes)
+    cardDetalhes.appendChild(nomeDetalhes)
+    cardDetalhes.appendChild(idDetalhes)
+    cardDetalhes.appendChild(divBiografia)
+    cardDetalhes.appendChild(divAparencia)
+    cardDetalhes.appendChild(divPoderes)
+
+
+    detalhes.append(cardDetalhes)
+    return detalhes
 }
 
 // Função para deletar os itens da tela estática
