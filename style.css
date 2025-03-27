@@ -104,12 +104,12 @@ main {
 /* Editando texto do ínicio*/
 .texto-inicio {
     position: absolute;
-    top: 25vh;
-    right: 35vh;
+    top: 30vh;
+    right: 20vh;
     text-align: center;
     font-family: "Chango", sans-serif;
     font-weight: 400;
-    font-size: 7vh;
+    font-size: 6vh;
     color: white;
     z-index: 2;
     width: 40vh;
@@ -183,7 +183,7 @@ main {
 }
 /* Características físicas do Card */
 .character-details {
-    width: 215vh;
+    width: 160vh;
     height: 80vh;
     background-color: #d9d9d9;
     border-radius: 1vh;
@@ -249,7 +249,7 @@ main {
 .character-power {
     position: absolute;
     top: 12vh;
-    right: 2vh;
+    right: -42vh;
     max-width: 80vh;
 }
 .character-power h1 {
@@ -275,9 +275,9 @@ main {
 .line{
     position: absolute;
     top: 12vh;
-    right: 50vh;
+    right: -2vh;
     width: 0.1vh;
-    height: 70vh;
+    height: 65vh;
     background-color: black;
 }
 
@@ -302,9 +302,9 @@ main {
 
 .closeDetalhe{
     position: relative;
-    right: 10px;
-    top: 10px;
-    width: 500px;
-    height: 10rem;
+    right: -83vh;
+    top: -65vh;
+    max-width: 17vh;
+    max-height: 17vh;
     cursor: pointer;
 }
