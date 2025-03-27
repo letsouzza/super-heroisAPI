@@ -11,6 +11,7 @@ const fundo = document.getElementById('fundo')
 
 // Função para buscar herói na API
 async function buscarHeroi(termo) {
+    closeDetalhe() // Fecha o card de detalhes
     try {
         // Buscar por nome
         const response = await fetch(`https://www.superheroapi.com/api.php/896c3ae8a2e2d92b14388ca61a36127e/search/${termo}`) // URL da API
@@ -70,6 +71,7 @@ function criarCard(heroi) {
 // Função do card de novos detalhes do personagem
 async function detalhesPersonagem(heroi) {
     galeria.replaceChildren() // Apaga toda a tela anterior 
+
     const cardDetalhes = document.createElement('div') // Cria o card
     cardDetalhes.className = 'character-details'
 
@@ -140,7 +142,7 @@ async function detalhesPersonagem(heroi) {
 
 
     // Acrescentar o Poder do personagem 
-    const divPoderes = document.getElementById("poderes")
+    const divPoderes = document.createElement("div")
     divPoderes.className = "character-power"
 
     const tituloPoderes = document.createElement('h1')
@@ -178,7 +180,13 @@ async function detalhesPersonagem(heroi) {
     const linha = document.createElement('div')
     linha.className = 'line'
 
+    // Icon de X para fechar a página
+    const x = document.createElement('img')
+    x.className = 'closeDetalhe'
+    x.src = './img/excluir.png'
+    x.id = 'closeDetalhe'
 
+    // Acrescentando no card todos os outros itens
     cardDetalhes.appendChild(imgDetalhes)
     cardDetalhes.appendChild(nomeDetalhes)
     cardDetalhes.appendChild(idDetalhes)
@@ -186,9 +194,15 @@ async function detalhesPersonagem(heroi) {
     cardDetalhes.appendChild(divAparencia)
     cardDetalhes.appendChild(divPoderes)
     cardDetalhes.appendChild(linha)
+    cardDetalhes.appendChild(x)
 
+    detalhes.appendChild(cardDetalhes)
+    detalhes.style.visibility = 'visible'; // Carcterizando a div como visível
+    
+    // Chama a função fechar ao clicar no botão
+    const xCloseCard = document.getElementById('closeDetalhe')
+    xCloseCard.addEventListener('click', closeDetalhe)
 
-    detalhes.append(cardDetalhes)
     return detalhes
 }
 
@@ -238,6 +252,12 @@ async function exibirHerois() {
     herois.forEach(heroi => {
         galeria.appendChild(criarCard(heroi))
     })
+}
+
+// Função para fechar a tela detalhes
+const closeDetalhe = () => {
+    detalhes.innerHTML = ''
+    detalhes.style.visibility = 'hidden' // Esconde a tela
 }
 
 // Clique do botão
