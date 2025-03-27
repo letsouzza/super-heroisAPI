@@ -4,7 +4,7 @@
 const botaoPesquisa = document.getElementById('botaoPesquisa')
 const barraPesquisa = document.getElementById('barraPesquisa')
 const galeria = document.getElementById('galeria')
-const detalhes = document.getElementById('detalhesPersonagem')
+const detalhes = document.getElementById('detalhes')
 const imgPrincipal = document.getElementById('imgPrincipal')
 const textoInicial = document.getElementById('textoInicial')
 const fundo = document.getElementById('fundo')
@@ -67,6 +67,7 @@ function criarCard(heroi) {
     return card
 }
 
+// Função do card de novos detalhes do personagem
 async function detalhesPersonagem(heroi) {
     galeria.replaceChildren() // Apaga toda a tela anterior 
     const cardDetalhes = document.createElement('div') // Cria o card
@@ -80,7 +81,7 @@ async function detalhesPersonagem(heroi) {
     const nomeDetalhes = document.createElement('h2')
     nomeDetalhes.textContent = heroi.name
 
-    const idDetalhes = document.createElement('p')
+    const idDetalhes = document.createElement('span')
     idDetalhes.textContent = `ID: ${heroi.id}`
 
 
@@ -174,6 +175,9 @@ async function detalhesPersonagem(heroi) {
     combate.textContent = `Combate: ${heroi.powerstats["combat"]}`
     divPoderes.appendChild(combate)
 
+    const linha = document.createElement('div')
+    linha.className = 'line'
+
 
     cardDetalhes.appendChild(imgDetalhes)
     cardDetalhes.appendChild(nomeDetalhes)
@@ -181,6 +185,7 @@ async function detalhesPersonagem(heroi) {
     cardDetalhes.appendChild(divBiografia)
     cardDetalhes.appendChild(divAparencia)
     cardDetalhes.appendChild(divPoderes)
+    cardDetalhes.appendChild(linha)
 
 
     detalhes.append(cardDetalhes)
@@ -193,7 +198,7 @@ function limparTela() {
     textoInicial.style.display = 'none'
     fundo.style.display = 'none'
     galeria.innerHTML = ''
-    galeria.style.display = 'grid' // Define o container como grid para meljhor organizar na págima 
+    galeria.style.display = 'grid' // Define o container como grid para melhor organizar na página 
 }
 
 // Função para executar todas as outras (limpar tela, pesquisar e mostrar os cards)

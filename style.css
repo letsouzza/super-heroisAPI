@@ -11,6 +11,7 @@ body {
     flex-direction: column;
 }
 
+/* Configura o header e seus conteúdos*/
 header {
     display: flex;
     background-color: #ba0000;
@@ -22,16 +23,15 @@ header {
     z-index: 10;
 }
 
+/* Editando a logo: img e h1 */
 .logo {
     display: flex;
     align-items: center;
     gap: 1vh;
 }
-
 .logo img {
     height: 7vh;
 }
-
 .logo h1 {
     font-family: "Jomolhari", serif;
     font-size: 4vh;
@@ -39,12 +39,12 @@ header {
     color: white;
 }
 
+/* Editando a barra de pesquisa e botão: input e button*/
 .pesquisa {
     display: flex;
     align-items: center;
     gap: 1vh;
 }
-
 #barraPesquisa {
     font-family: "Jomolhari", serif;
     font-weight: 200;
@@ -57,7 +57,6 @@ header {
     background-color: #d9d9d9;
     font-size: 1.8vh;
 }
-
 #botaoPesquisa {
     font-family: "Jomolhari", serif;
     font-weight: 200;
@@ -70,31 +69,30 @@ header {
     cursor: pointer;
     transition: all 0.3s; 
 }
-
 /* Transição mudar de cor o botão */
 #botaoPesquisa:hover {
     background-color: black;
     color: white;
 }
 
+/* Configurando o main */
 main {
     flex: 1;
     position: relative;
 }
 
+/* Editando a imagem principal dos herois, e o fundo de quadrinhos*/
 .imagens-inicio {
     position: relative;
     width: 110%;
     height: calc(92vh - 20px);
     overflow: hidden;
 }
-
 #fundo {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 #imgPrincipal {
     position: absolute;
     left: 0vh;
@@ -103,6 +101,7 @@ main {
     z-index: 1;
 }
 
+/* Editando texto do ínicio*/
 .texto-inicio {
     position: absolute;
     top: 25vh;
@@ -116,7 +115,7 @@ main {
     width: 40vh;
 }
 
-/* Estilos para a galeria de heróis */
+/* Estilizando para a galeria de heróis */
 #galeria {
     position: absolute;
     top: 2vh;
@@ -127,6 +126,7 @@ main {
     max-width: 1200px;
 }
 
+/*  Configurando a característica básica dos cards */
 .character-card {
     width: 25vh;
     height: 40vh;
@@ -135,21 +135,19 @@ main {
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 /* Efeito de transição dos cards, quado passa o mouse em cima*/
 .character-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* borda sombreada */
 }
 
+/* Itens do card: Img, Nome(h2), ID(p), Nome completo(h3) */
 .character-card img {
     width: 100%;
     height: 25vh;
     object-fit: cover; /* Redimensionar a imagem para completar o espaço sem alterar seu tamanho pré definido*/
     border-bottom: 2px solid #ba0000;
 }
-
-/* Nome do personagem*/
 .character-card h2 {
     font-family: "Mako", sans-serif;
     font-size: 2.3vh;
@@ -158,8 +156,6 @@ main {
     color: black;
     text-align: left;
 }
-
-/* ID do personagem*/
 .character-card p {
     font-family: "Mako", sans-serif;
     font-size: 2vh;
@@ -167,7 +163,6 @@ main {
     color: black;
     text-align: left;
 }
-
 .character-card h3 {
     font-family: "Mako", sans-serif;
     font-weight: 400;
@@ -177,6 +172,113 @@ main {
     text-align: left;
 }
 
+
+/* Configuração do Card de Detalhes */
+#detalhes{
+    position: absolute;
+    top: 5vh;
+    left: 8vh;
+    max-width: 1200px;
+}
+/* Características físicas do Card */
+.character-details {
+    width: 215vh;
+    height: 80vh;
+    background-color: #d9d9d9;
+    border-radius: 1vh;
+}
+
+/* Itens do Card de Detalhes: Img, Nome(h2), ID(span)*/
+.character-details img{
+    padding: 5vh;
+    height: 80vh;
+    object-fit: cover; 
+    border-radius: 6vh;
+}
+.character-details h2 {
+    position: absolute;
+    top: 4vh;
+    left: 65vh;
+    font-family: "Mako", sans-serif;
+    font-size: 6vh;
+}
+.character-details span {
+    position: absolute;
+    top: 11vh;
+    left: 65vh;
+    font-family: "Mako", sans-serif;
+    font-size: 3.5vh;
+}
+
+/* Configurando todos os P do Card detalhes*/
+.character-details p {
+    font-family: "Mako", sans-serif;
+    font-size: 3.5vh;
+}
+
+/* Editandoo Div com dados de Biografia*/
+.character-biography {
+    position: absolute;
+    top: 17vh;
+    left: 65vh;
+    max-width: 80vh;
+}
+
+/* Editandoo Div com dados de Aparência*/
+.character-appearence {
+    position: absolute;
+    top: 47vh;
+    left: 70vh;
+    max-width: 80vh;
+}
+.character-appearence h1{
+    position: absolute;
+    top: -6vh;
+    left: -5vh;
+    font-family: "Newsreader", serif;
+    font-size: 4vh;
+    font-weight: 400;
+}
+.character-appearence li{
+    font-family: "Mako", sans-serif;
+    font-size: 3.5vh;
+}
+
+/* Editandoo Div com dados de Poder*/
+.character-power {
+    position: absolute;
+    top: 12vh;
+    right: 2vh;
+    max-width: 80vh;
+}
+.character-power h1 {
+    position: absolute;
+    top: -5vh;
+    right: 10vh;
+    font-family: "Newsreader", serif;
+    font-size: 4vh;
+    font-weight: 400;
+}
+.character-power img{
+    position: absolute;
+    top: -5vh;
+    right: 25vh;
+    width: 18vh;
+}
+.character-power p{
+    padding: 3.5vh;
+}
+
+
+/* Div para criar linha de divisória */
+.line{
+    position: absolute;
+    top: 12vh;
+    right: 50vh;
+    width: 0.1vh;
+    height: 70vh;
+    background-color: black;
+}
 
 
 /* Mensagens de ERRO*/ 
@@ -188,7 +290,6 @@ main {
     text-align: left;
     padding: 20px;
 }
-
 .mensagem-carregamento {
     grid-column: 1 / -1;
     color: white;
