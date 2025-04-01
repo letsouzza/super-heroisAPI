@@ -177,8 +177,8 @@ main {
 #detalhes{
     position: absolute;
     top: 5vh;
-    left: 8vh;
-    max-width: 1200px;
+    padding: 16px;
+    width: 100vw;
     visibility: hidden;
 }
 /* Características físicas do Card */
