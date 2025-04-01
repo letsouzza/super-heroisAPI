@@ -183,7 +183,7 @@ main {
 }
 /* Características físicas do Card */
 .character-details {
-    width: 160vh;
+    width: 195vh;
     height: 80vh;
     background-color: #d9d9d9;
     border-radius: 1vh;
@@ -199,14 +199,14 @@ main {
 .character-details h2 {
     position: absolute;
     top: 4vh;
-    left: 65vh;
+    left: 60vh;
     font-family: "Mako", sans-serif;
     font-size: 6vh;
 }
 .character-details span {
     position: absolute;
     top: 11vh;
-    left: 65vh;
+    left: 60vh;
     font-family: "Mako", sans-serif;
     font-size: 3.5vh;
 }
@@ -221,7 +221,7 @@ main {
 .character-biography {
     position: absolute;
     top: 17vh;
-    left: 65vh;
+    left: 60vh;
     max-width: 80vh;
 }
 
@@ -229,7 +229,7 @@ main {
 .character-appearence {
     position: absolute;
     top: 47vh;
-    left: 70vh;
+    left: 65vh;
     max-width: 80vh;
 }
 .character-appearence h1{
@@ -248,8 +248,8 @@ main {
 /* Editandoo Div com dados de Poder*/
 .character-power {
     position: absolute;
-    top: 12vh;
-    right: -42vh;
+    top: 10vh;
+    right: -5vh;
     max-width: 80vh;
 }
 .character-power h1 {
@@ -275,7 +275,7 @@ main {
 .line{
     position: absolute;
     top: 12vh;
-    right: -2vh;
+    right: 40vh;
     width: 0.1vh;
     height: 65vh;
     background-color: black;
@@ -302,7 +302,7 @@ main {
 
 .closeDetalhe{
     position: relative;
-    right: -83vh;
+    right: -115vh;
     top: -65vh;
     max-width: 17vh;
     max-height: 17vh;
