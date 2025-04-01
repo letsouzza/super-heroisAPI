@@ -249,7 +249,7 @@ main {
 .character-power {
     position: absolute;
     top: 10vh;
-    right: -30vh;
+    right: -100vh;
     max-width: 80vh;
 }
 .character-power h1 {
@@ -275,7 +275,7 @@ main {
 .line{
     position: absolute;
     top: 12vh;
-    right: 10vh;
+    right: -50vh;
     width: 0.1vh;
     height: 65vh;
     background-color: black;
